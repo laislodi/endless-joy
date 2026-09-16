@@ -126,12 +126,16 @@ export function Checkout({ cart, setCart }: CheckoutProps) {
 
         <aside className="order-summary">
           <span className="eyebrow">Order summary</span>
-          {flavors.filter((f) => cart[f.id]).map((f) => (
-            <div className="summary-line" key={f.id}>
-              <span>{cart[f.id]} × {f.name}</span>
-              <b>${((cart[f.id] || 0) * f.price).toFixed(2)}</b>
-            </div>
-          ))}
+          {flavors
+            .filter((f) => cart[f.id])
+            .map((f) => (
+              <div className="summary-line" key={f.id}>
+                <span>
+                  {cart[f.id]} × {f.name}
+                </span>
+                <b>${((cart[f.id] || 0) * f.price).toFixed(2)}</b>
+              </div>
+            ))}
           <hr />
           <div className="summary-line">
             <span>Delivery</span>
@@ -141,7 +145,9 @@ export function Checkout({ cart, setCart }: CheckoutProps) {
             <span>Total</span>
             <b>${(subtotal + delivery).toFixed(2)}</b>
           </div>
-          <button className="btn btn-primary full" disabled={!subtotal}>Place order</button>
+          <button className="btn btn-primary full" disabled={!subtotal}>
+            Place order
+          </button>
           <small>No real payment is processed in this prototype.</small>
         </aside>
       </form>
@@ -154,7 +160,10 @@ export function Checkout({ cart, setCart }: CheckoutProps) {
             setCart({});
           }}
         >
-          <p>Thanks! In the real version, this is where the order would be sent to the bakery and payment would be processed. For now, no charge was made.</p>
+          <p>
+            Thanks! In the real version, this is where the order would be sent to the bakery and
+            payment would be processed. For now, no charge was made.
+          </p>
         </Modal>
       )}
     </main>

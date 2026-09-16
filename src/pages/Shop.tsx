@@ -14,7 +14,7 @@ export function Shop({ cart, setCart }: ShopProps) {
   const totalQty = Object.values(cart).reduce((a, b) => a + b, 0);
   const subtotal = useMemo(
     () => flavors.reduce((s, f) => s + (cart[f.id] || 0) * f.price, 0),
-    [cart]
+    [cart],
   );
   const change = (id: string, delta: number) =>
     setCart({ ...cart, [id]: Math.max(0, (cart[id] || 0) + delta) });
@@ -36,9 +36,15 @@ export function Shop({ cart, setCart }: ShopProps) {
                 ) : (
                   <div
                     className="cookie-visual"
-                    style={{ background: `radial-gradient(circle at 42% 38%, #fff1cf 0 12%, ${f.accent} 13% 68%, #A95B2A 69% 100%)` }}
+                    style={{
+                      background: `radial-gradient(circle at 42% 38%, #fff1cf 0 12%, ${f.accent} 13% 68%, #A95B2A 69% 100%)`,
+                    }}
                   >
-                    <i /><i /><i /><i /><i />
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                    <i />
                   </div>
                 )}
               </div>
@@ -50,9 +56,13 @@ export function Shop({ cart, setCart }: ShopProps) {
                 <div className="product-bottom">
                   <b>${f.price.toFixed(2)}</b>
                   <div className="stepper">
-                    <button onClick={() => change(f.id, -1)} aria-label={`Remove one ${f.name}`}>−</button>
+                    <button onClick={() => change(f.id, -1)} aria-label={`Remove one ${f.name}`}>
+                      −
+                    </button>
                     <span>{cart[f.id] || 0}</span>
-                    <button onClick={() => change(f.id, 1)} aria-label={`Add one ${f.name}`}>+</button>
+                    <button onClick={() => change(f.id, 1)} aria-label={`Add one ${f.name}`}>
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
@@ -63,18 +73,26 @@ export function Shop({ cart, setCart }: ShopProps) {
         <aside className="order-summary">
           <span className="eyebrow">Your box</span>
           <h2>{totalQty ? `${totalQty} cookie${totalQty > 1 ? 's' : ''}` : 'Start selecting'}</h2>
-          {flavors.filter((f) => cart[f.id]).map((f) => (
-            <div className="summary-line" key={f.id}>
-              <span>{cart[f.id]} × {f.name}</span>
-              <b>${((cart[f.id] || 0) * f.price).toFixed(2)}</b>
-            </div>
-          ))}
+          {flavors
+            .filter((f) => cart[f.id])
+            .map((f) => (
+              <div className="summary-line" key={f.id}>
+                <span>
+                  {cart[f.id]} × {f.name}
+                </span>
+                <b>${((cart[f.id] || 0) * f.price).toFixed(2)}</b>
+              </div>
+            ))}
           <hr />
           <div className="summary-total">
             <span>Subtotal</span>
             <b>${subtotal.toFixed(2)}</b>
           </div>
-          <button className="btn btn-primary full" disabled={!totalQty} onClick={() => navigate('/checkout')}>
+          <button
+            className="btn btn-primary full"
+            disabled={!totalQty}
+            onClick={() => navigate('/checkout')}
+          >
             Continue to checkout
           </button>
           <small>Payment and delivery are simulated for this front-end prototype.</small>

@@ -16,7 +16,10 @@ export function Contact() {
         <div>
           <span className="eyebrow">Contact us</span>
           <h1>Questions? Cravings? Say hello.</h1>
-          <p className="lead">We’d love to hear from you. The contact details below are placeholders for the prototype.</p>
+          <p className="lead">
+            We’d love to hear from you. The contact details below are placeholders for the
+            prototype.
+          </p>
           <div className="contact-card">
             <b>Phone</b>
             <span>(403) 555-0142</span>
@@ -50,7 +53,10 @@ export function Contact() {
 
       {modal && (
         <Modal title="Message simulated" onClose={() => setModal(false)}>
-          <p>Your message looks good. In the backend version, it would be saved or sent to the bakery inbox. Nothing was actually sent.</p>
+          <p>
+            Your message looks good. In the backend version, it would be saved or sent to the bakery
+            inbox. Nothing was actually sent.
+          </p>
         </Modal>
       )}
     </main>

@@ -15,7 +15,9 @@ export function Header({ count }: HeaderProps) {
         <img src={monogram} alt="Endless & Joy monogram" />
         <span>Endless & Joy</span>
       </Link>
-      <button className="menu-btn" onClick={() => setOpen(!open)}>☰</button>
+      <button className="menu-btn" onClick={() => setOpen(!open)}>
+        ☰
+      </button>
       <nav className={open ? 'open' : ''} onClick={() => setOpen(false)}>
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/about">About</NavLink>

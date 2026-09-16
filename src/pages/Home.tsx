@@ -9,11 +9,20 @@ export function Home() {
       <section className="hero">
         <div className="hero-copy">
           <span className="eyebrow">Small-batch • Southeast Calgary</span>
-          <h1>Life’s too short for <em>boring cookies.</em></h1>
-          <p>Handcrafted artisan cookies inspired by Brazilian flavors, made fresh to order with bold combinations and genuine care.</p>
+          <h1>
+            Life’s too short for <em>boring cookies.</em>
+          </h1>
+          <p>
+            Handcrafted artisan cookies inspired by Brazilian flavors, made fresh to order with bold
+            combinations and genuine care.
+          </p>
           <div className="hero-actions">
-            <Link className="btn btn-primary" to="/shop">Build your box</Link>
-            <Link className="btn btn-secondary" to="/why-us">Why Endless & Joy</Link>
+            <Link className="btn btn-primary" to="/shop">
+              Build your box
+            </Link>
+            <Link className="btn btn-secondary" to="/why-us">
+              Why Endless & Joy
+            </Link>
           </div>
           <div className="trust-row">
             <span>✦ Made to order</span>
@@ -41,7 +50,9 @@ export function Home() {
             <article className="mini-card" key={f.id}>
               <div
                 className="flavor-art"
-                style={{ background: `radial-gradient(circle at 35% 30%, #fff7e5 0 18%, ${f.accent} 19% 55%, #b86a2a 56% 100%)` }}
+                style={{
+                  background: `radial-gradient(circle at 35% 30%, #fff7e5 0 18%, ${f.accent} 19% 55%, #b86a2a 56% 100%)`,
+                }}
               >
                 <span>• • •</span>
               </div>
@@ -51,7 +62,9 @@ export function Home() {
           ))}
         </div>
         <div className="center">
-          <Link className="text-link" to="/shop">See all flavors →</Link>
+          <Link className="text-link" to="/shop">
+            See all flavors →
+          </Link>
         </div>
       </section>
 
@@ -60,8 +73,13 @@ export function Home() {
         <div>
           <span className="eyebrow">A cookie with a story</span>
           <h2>Culture, comfort, and a little surprise.</h2>
-          <p>Our recipes are rooted in family tradition and shaped by Brazilian-inspired flavors like orange, lime, coconut, chocolate, and nuts.</p>
-          <Link className="btn btn-light" to="/about">Meet the owner</Link>
+          <p>
+            Our recipes are rooted in family tradition and shaped by Brazilian-inspired flavors like
+            orange, lime, coconut, chocolate, and nuts.
+          </p>
+          <Link className="btn btn-light" to="/about">
+            Meet the owner
+          </Link>
         </div>
       </section>
     </>
